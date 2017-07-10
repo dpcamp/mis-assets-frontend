@@ -1,0 +1,23 @@
+<div *ngIf="phone">
+
+  <form (ngSubmit)="updatePhone()">
+
+    <div class="form-group">
+      <label>Number</label>
+      <input type="text" class="form-control" name="number" [(ngModel)]="phone.number">
+    </div>
+
+    <div class="form-group">
+      <label>Location</label>
+      <input type="text" class="form-control" name="location" [(ngModel)]="phone.location">
+    </div>
+    
+
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+    <button type="submit" class="btn btn-success">Update Phone</button>
+
+  </form>
+
+</div>

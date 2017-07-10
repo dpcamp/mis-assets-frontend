@@ -1,0 +1,27 @@
+<div class="jumbotron text-center">
+  <h1>Phones</h1>
+
+    <a routerLink="/phones/create" class="btn btn-sm btn-info">Create Phone</a>
+</div>
+
+<div class="user-list row" *ngIf="phones">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Number</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+
+  <tbody *ngFor="let phone of phones">
+    <tr>
+      <td>{{ phone.id }} </td>
+      <td><a [routerLink]="['/phones', phone.id]" >{{ phone.number }}</a></td>
+      <td>{{ phone.location }} </td>
+    </tr>
+    
+  </tbody>
+  </table>
+
+</div>

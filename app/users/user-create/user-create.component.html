@@ -1,0 +1,32 @@
+<div *ngIf="user">
+
+  <form (ngSubmit)="createUser()">
+
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="user.first_name">
+    </div>
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="user.last_name">
+    </div>    
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" class="form-control" name="email" [(ngModel)]="user.email">
+    </div>
+
+    <div class="form-group">
+      <label>Website</label>
+      <input type="text" class="form-control" name="website" [(ngModel)]="user.website">
+    </div>
+
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+    <button type="submit" class="btn btn-success">Create User</button>
+
+  </form>
+
+</div>

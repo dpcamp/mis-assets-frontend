@@ -1,0 +1,35 @@
+<div class="jumbotron text-center">
+  <h1>Users</h1>
+
+  <a routerLink="/users/create" class="btn btn-sm btn-info">Create User</a>
+</div>
+
+<div class="user-list row" *ngIf="users">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Website</th>
+        </tr>
+    </thead>
+
+  <tbody *ngFor="let user of users">
+    <tr>
+      <td>{{ user.id }} </td>
+      <td><a [routerLink]="['/users', user.id]" >{{ user.name }} </a></td>
+      <td>{{ user.email }} </td>
+      <td>{{ user.website }} </td>
+    </tr>
+    
+  </tbody>
+  </table>
+
+    <!--><div class="user-card text-center" [routerLink]="['/users', user.id]">
+      <h2> {{ user.name }} <small>{{ user.email }}</small></h2>
+    </div><-->
+
+
+
+</div>

@@ -1,0 +1,8 @@
+<div *ngIf="phone">
+
+  <a [routerLink]="['/phones', phone.id, 'edit']" class="btn btn-primary btn-sm">Edit</a>
+  <a (click)="deletePhone()" class="btn btn-danger btn-sm">Delete</a>
+
+  <h2>{{ phone.number }} <small>{{ phone.location }}</small></h2>
+
+</div>
